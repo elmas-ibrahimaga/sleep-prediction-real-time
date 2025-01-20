@@ -1,0 +1,30 @@
+import pandas as pd
+
+# Step 1: Load the dataset
+file_path = 'Sleep_health_and_lifestyle_dataset.csv'  # Replace with your actual file path
+df = pd.read_csv(file_path)
+
+# Step 2: Check unique values in the 'Sleep Disorder' column
+unique_values = df['Sleep Disorder'].unique()
+print("Unique Sleep Disorder values:", unique_values)
+
+# Step 3: Map unique values to numerical indices
+disorder_mapping = {value: idx for idx, value in enumerate(unique_values)}
+print("Mapping of Sleep Disorders to indices:", disorder_mapping)
+
+# Step 4: Add a new column 'Sleep Disorder Index'
+df['Sleep Disorder Index'] = df['Sleep Disorder'].map(disorder_mapping)
+
+# Step 5: Split the dataset into two separate DataFrames
+train_df = df.sample(frac=0.8, random_state=42)  # 80% for training
+test_df = df.drop(train_df.index)  # Remaining 20% for testing
+
+# Step 6: Save the modified datasets to two separate CSV files
+train_output_path = 'train_datasett.csv'  # Desired output file path for train set
+test_output_path = 'test_datasett.csv'  # Desired output file path for test set
+
+train_df.to_csv(train_output_path, index=False)
+test_df.to_csv(test_output_path, index=False)
+
+print(f"Train dataset saved to {train_output_path}")
+print(f"Test dataset saved to {test_output_path}")

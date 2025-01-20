@@ -1,0 +1,26 @@
+Person ID,Gender,Age,Occupation,Sleep Duration,Quality of Sleep,Physical Activity Level,Stress Level,BMI Category,Blood Pressure,Heart Rate,Daily Steps,Sleep Disorder,Sleep Disorder Index,Sleep_Disorder_Index,Gender_Index,Occupation_Index,BMI_Index
+6,Male,28,Software Engineer,5.9,4,30,8,Obese,140/90,85,3000,Insomnia,2,0,1.0,9.0,2.0
+19,Female,29,Nurse,6.5,5,40,7,Normal Weight,132/87,80,4000,Insomnia,2,0,0.0,0.0,3.0
+32,Female,30,Nurse,6.4,5,35,7,Normal Weight,130/86,78,4100,Insomnia,2,0,0.0,0.0,3.0
+94,Male,35,Lawyer,7.4,7,60,5,Obese,135/88,84,3300,Sleep Apnea,1,1,1.0,6.0,2.0
+146,Female,38,Lawyer,7.4,7,60,5,Obese,135/88,84,3300,Sleep Apnea,1,1,0.0,6.0,2.0
+178,Male,42,Salesperson,6.5,6,45,7,Overweight,130/85,72,6000,Insomnia,2,0,1.0,2.0,0.0
+190,Male,43,Salesperson,6.5,6,45,7,Overweight,130/85,72,6000,Insomnia,2,0,1.0,2.0,0.0
+196,Male,43,Salesperson,6.5,6,45,7,Overweight,130/85,72,6000,Insomnia,2,0,1.0,2.0,0.0
+221,Female,44,Teacher,6.6,7,45,4,Overweight,135/90,65,6000,Insomnia,2,0,0.0,1.0,0.0
+222,Male,44,Salesperson,6.4,6,45,7,Overweight,130/85,72,6000,Insomnia,2,0,1.0,2.0,0.0
+223,Male,44,Salesperson,6.3,6,45,7,Overweight,130/85,72,6000,Insomnia,2,0,1.0,2.0,0.0
+225,Female,44,Teacher,6.6,7,45,4,Overweight,135/90,65,6000,Insomnia,2,0,0.0,1.0,0.0
+227,Female,44,Teacher,6.6,7,45,4,Overweight,135/90,65,6000,Insomnia,2,0,0.0,1.0,0.0
+231,Female,44,Teacher,6.6,7,45,4,Overweight,135/90,65,6000,Insomnia,2,0,0.0,1.0,0.0
+238,Female,44,Teacher,6.5,7,45,4,Overweight,135/90,65,6000,Insomnia,2,0,0.0,1.0,0.0
+245,Male,44,Salesperson,6.3,6,45,7,Overweight,130/85,72,6000,Insomnia,2,0,1.0,2.0,0.0
+255,Female,45,Teacher,6.5,7,45,4,Overweight,135/90,65,6000,Insomnia,2,0,0.0,1.0,0.0
+284,Female,50,Nurse,6.0,6,90,8,Overweight,140/95,75,10000,Sleep Apnea,1,1,0.0,0.0,0.0
+296,Female,50,Nurse,6.0,6,90,8,Overweight,140/95,75,10000,Sleep Apnea,1,1,0.0,0.0,0.0
+305,Female,51,Nurse,6.1,6,90,8,Overweight,140/95,75,10000,Sleep Apnea,1,1,0.0,0.0,0.0
+306,Female,51,Nurse,6.1,6,90,8,Overweight,140/95,75,10000,Sleep Apnea,1,1,0.0,0.0,0.0
+307,Female,52,Accountant,6.5,7,45,7,Overweight,130/85,72,6000,Insomnia,2,0,0.0,3.0,0.0
+347,Female,57,Nurse,8.2,9,75,3,Overweight,140/95,68,7000,Sleep Apnea,1,1,0.0,0.0,0.0
+349,Female,57,Nurse,8.2,9,75,3,Overweight,140/95,68,7000,Sleep Apnea,1,1,0.0,0.0,0.0
+372,Female,59,Nurse,8.1,9,75,3,Overweight,140/95,68,7000,Sleep Apnea,1,1,0.0,0.0,0.0
