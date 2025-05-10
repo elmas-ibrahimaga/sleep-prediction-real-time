@@ -1,1 +1,0 @@
-{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1734716880043,"sparkVersion":"3.5.3","uid":"StringIndexer_76db5ac951d6","paramMap":{"handleInvalid":"keep","inputCol":"BMI Category","outputCol":"BMI_Index"},"defaultParamMap":{"handleInvalid":"error","outputCol":"StringIndexer_76db5ac951d6__output","stringOrderType":"frequencyDesc"}}

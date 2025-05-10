@@ -1,0 +1,22 @@
+Person ID,Sleep Disorder Index,Original Disorder Name,Predicted Disorder Index,Predicted Disorder Name,timestamp
+1,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+2,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+3,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+4,1,Insomnia,1,Insomnia,2025-05-09T17:43:35.027021
+5,1,Insomnia,1,Insomnia,2025-05-09T17:43:35.027021
+6,2,Sleep Apnea,1,Insomnia,2025-05-09T17:43:35.027021
+7,2,Sleep Apnea,0,No Disorder,2025-05-09T17:43:35.027021
+8,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+9,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+10,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+11,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+12,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+13,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+14,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+15,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+16,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+17,1,Insomnia,1,Insomnia,2025-05-09T17:43:35.027021
+18,1,Insomnia,0,No Disorder,2025-05-09T17:43:35.027021
+19,2,Sleep Apnea,1,Insomnia,2025-05-09T17:43:35.027021
+20,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
+21,0,No Disorder,0,No Disorder,2025-05-09T17:43:35.027021
