@@ -19,3 +19,4 @@ predictions_output/
 
 # Backup configs
 backup_configs/
+*.zip
