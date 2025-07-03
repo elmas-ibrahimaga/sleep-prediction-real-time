@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+
+# IntelliJ / PyCharm
+.idea/
+
+# Output & logs
+predictions_output/
+*.csv
+
+# Kafka/Spark jars
+*.jar
+
+# Backup configs
+backup_configs/

@@ -1,0 +1,93 @@
+version: '3.8'
+
+networks:
+  data_net:
+    driver: bridge
+
+volumes:
+  kafka_data:
+
+services:
+  kafka:
+    image: bitnami/kafka:latest
+    environment:
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - KAFKA_CFG_NODE_ID=1
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka:9093
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,CONTROLLER://kafka:9093
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+      - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
+
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka_data:/bitnami/kafka
+    networks:
+      data_net:
+        aliases:
+          - kafka
+
+  spark:
+    image: bitnami/spark:latest
+    environment:
+      - SPARK_MODE=master
+    depends_on:
+      - kafka
+    ports:
+      - "4040:4040"
+    networks:
+      - data_net
+
+  flask:
+    build: ./flask_ui
+    depends_on:
+      - kafka
+    ports:
+      - "5000:5000"
+    environment:
+      - KAFKA_BOOTSTRAP=kafka:9092
+    networks:
+      - data_net
+    entrypoint: [ "/bin/sh", "-c", "sleep 10 && python app.py" ]
+    volumes:
+      - ./predictions_output:/app/predictions_output  # ✅ mount same output as consumer
+
+
+
+  producer:
+    build:
+      context: ./producer
+      dockerfile: Dockerfile
+    depends_on:
+      - kafka
+    restart: on-failure
+    environment:
+      - KAFKA_BOOTSTRAP=kafka:9092
+    networks:
+      - data_net
+    entrypoint: [ "/bin/sh", "-c", "sleep 25 && python kafka_producer.py" ]
+
+
+  consumer:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    depends_on:
+      - kafka
+    environment:
+      - KAFKA_BOOTSTRAP=kafka:9092
+      - HOME=/tmp
+      - SPARK_LOCAL_DIRS=/tmp
+      - SPARK_WORKER_DIR=/tmp
+    networks:
+      - data_net
+    entrypoint: [ "/bin/sh", "-c", "rm -rf /app/predictions_output/* && sleep 20 && python spark_consumer.py" ]
+    volumes:
+      - ./predictions_output:/app/predictions_output
+
+
+
+

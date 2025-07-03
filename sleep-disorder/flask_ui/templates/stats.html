@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Statistics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      padding: 30px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 60%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 18px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #6c63ff;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📊 Prediction Summary</h2>
+
+  {% if stats %}
+  <table>
+    <thead>
+      <tr>
+        <th>Disorder</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for disorder, count in stats.items() %}
+      <tr>
+        <td>{{ disorder }}</td>
+        <td>{{ count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No prediction data available yet.</p>
+  {% endif %}
+
+  <a href="{{ url_for('index') }}">← Back to Form</a>
+
+</body>
+</html>

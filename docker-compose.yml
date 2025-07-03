@@ -31,7 +31,8 @@ services:
           - kafka
 
   spark:
-    image: bitnami/spark:latest
+    image: bitnami/spark:3.3.0-debian-11-r6
+
     environment:
       - SPARK_MODE=master
     depends_on:
