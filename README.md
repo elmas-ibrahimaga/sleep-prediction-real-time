@@ -13,8 +13,6 @@ A scalable, cloudless, and real-time system for predicting sleep disorders using
 - 📈 Live stats logging and UI feedback
 - ✅ Modular, reproducible, and extendable
 
----
-
 ## 🧠 Tech Stack
 
 | Component | Technology |
@@ -28,8 +26,6 @@ A scalable, cloudless, and real-time system for predicting sleep disorders using
 | Languages | Python, PySpark |
 | Dataset | Sleep Health and Lifestyle Dataset (Synthetic - Kaggle) |
 
----
-
 ## 🧬 Dataset Overview
 
 - **Records**: 374 participants  
@@ -38,8 +34,6 @@ A scalable, cloudless, and real-time system for predicting sleep disorders using
   - Lifestyle: Sleep Duration, Stress Level, Physical Activity, Daily Steps
   - Health: Heart Rate, BMI, Blood Pressure
 - **Target**: `Sleep Disorder` → {None, Insomnia, Sleep Apnea}
-
----
 
 ## 📊 Model Performance
 
@@ -53,8 +47,6 @@ A scalable, cloudless, and real-time system for predicting sleep disorders using
 
 ✅ Logistic Regression was chosen for its balance of speed, accuracy, and Spark MLlib compatibility.
 
----
-
 ## 🔁 Data Flow
 
 ```mermaid
@@ -66,4 +58,58 @@ graph TD;
     KafkaResultTopic --> ResultConsumer
     ResultConsumer -->|CSV Output| FlaskUI
     FlaskUI --> UserDisplay
+```
 
+## 📦 Running the Project (Local Setup)
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/yourusername/sleep-disorder-prediction.git
+   cd sleep-disorder-prediction
+   ```
+
+2. **Build and run with Docker Compose**
+   ```bash
+   docker-compose down --volumes --remove-orphans
+   docker system prune --volumes --all -f
+   docker-compose build --no-cache
+   docker-compose up -d
+   ```
+
+3. **Expose the UI with Ngrok**
+   ```bash
+   ngrok http 5000
+   ```
+
+4. **Access the web form**
+   - Local: [http://localhost:5000](http://localhost:5000)
+   - Public: `https://my-ngrok-link.ngrok.io`
+
+## 🧪 How It Works
+
+- Users enter health/lifestyle data via a Flask web form.
+- Flask acts as a Kafka producer → sends JSON to a topic.
+- Spark Structured Streaming reads the topic, transforms the data, applies ML model.
+- Prediction is pushed to a new Kafka topic.
+- Kafka Consumer saves prediction to a shared volume (CSV).
+- Flask reads this result and shows it back to the user.
+- All services run locally via Docker Compose.
+
+
+## 📚 References
+
+- Dataset: [Kaggle Sleep Health Dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)
+- Tools: Apache Kafka, Apache Spark, Flask, Docker, Ngrok
+- Academic Supervision: Dr. Öğr. Üyesi Nur Banu OĞUR
+
+## 👨‍💻 Author
+
+**Elmas İbrahimağa**  
+🧑‍🎓 B.Sc. in Software Engineering, Sakarya University  
+📧 elmas.ibrahimaga@ogr.sakarya.edu.tr  
+🔗 [LinkedIn](www.linkedin.com/in/elmas-ibrahimaga)
+
+## ⭐️ License
+
+This project is for academic and educational purposes.  
+MIT License .
