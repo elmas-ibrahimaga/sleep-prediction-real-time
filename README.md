@@ -67,10 +67,3 @@ graph TD;
     ResultConsumer -->|CSV Output| FlaskUI
     FlaskUI --> UserDisplay
 
-
-## Build and run with Docker Compose
-
-docker-compose down --volumes --remove-orphans
-docker system prune --volumes --all -f
-docker-compose build --no-cache
-docker-compose up -d
