@@ -64,7 +64,7 @@ graph TD;
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/sleep-disorder-prediction.git
+   git clone https://github.com/elmas-ibrahimaga/sleep-prediction-real-time
    cd sleep-disorder-prediction
    ```
 
